@@ -25,7 +25,9 @@
   "author": "fernangb <gfsouza@poli.ufrj.br>",
   "license": "MIT",
   "dependencies": {
+    "class-transformer": "^0.4.0",
     "pg": "^8.5.1",
+    "tsyringe": "^4.4.0",
     "typeorm": "^0.2.31",
     "uuidv4": "^6.2.6"
   }
