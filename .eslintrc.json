@@ -29,7 +29,12 @@
           "ts": "never"
         }
       ],
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "camelcase": "off",
+      "no-useless-constructor": "off",
+      "class-methods-use-this": "off",
+      "import/prefer-default-export": "off",
+      "import/no-extraneous-dependencies": "off"
     },
     "settings": {
       "import/resolver": {
