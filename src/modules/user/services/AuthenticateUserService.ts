@@ -29,7 +29,7 @@ class AuthenticateUserService {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new Error('Incorrect email/password combination');
+      throw new Error('Combinação email/senha inválida.');
     }
 
     const correctPassord = await this.hashProvider.compareHash(
@@ -38,7 +38,7 @@ class AuthenticateUserService {
     );
 
     if (!correctPassord) {
-      throw new Error('Incorrect email/password combination');
+      throw new Error('Combinação email/senha inválida.');
     }
 
     const { secret, expiresIn } = authConfig.jwt;

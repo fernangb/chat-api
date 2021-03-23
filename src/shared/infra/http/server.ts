@@ -3,7 +3,8 @@ import 'reflect-metadata';
 
 import express, { Request, Response } from 'express';
 import path from 'path';
-// import io from 'socket.io';
+import cors from 'cors';
+
 import routes from './routes';
 import '../typeorm';
 import '../../container';
@@ -12,6 +13,7 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 

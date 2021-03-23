@@ -22,7 +22,7 @@ class CreateUserService {
     const findUser = await this.usersRepository.findByEmail(email);
 
     if (findUser) {
-      throw new Error('This e-mail already exists');
+      throw new Error('Email já cadastrado.');
     }
 
     const hashedPassword = await this.hashProvider.createHash(password);
