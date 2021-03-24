@@ -38,6 +38,10 @@ class ChatUsersRepository implements IChatUsersRepository {
       where: { chat_id, user_id },
     });
   }
+
+  public async find(chat_id: string): Promise<ChatUser[]> {
+    return this.ormRepository.find({ where: { chat_id } });
+  }
 }
 
 export default ChatUsersRepository;

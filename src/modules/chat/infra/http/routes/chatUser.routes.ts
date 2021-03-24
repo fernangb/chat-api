@@ -7,4 +7,6 @@ const chatUsersController = new ChatUsersController();
 
 chatUsersRouter.post('/', chatUsersController.create);
 
+chatUsersRouter.get('/:id', chatUsersController.index);
+
 export default chatUsersRouter;

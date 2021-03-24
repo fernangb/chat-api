@@ -1,14 +1,15 @@
 import { container } from 'tsyringe';
 import { Request, Response } from 'express';
 import { classToClass } from 'class-transformer';
-import JoinChatService from '../../../services/CreateChatUserService';
+import CreateChatUserService from '../../../services/CreateChatUserService';
+import ListChatUsersService from '../../../services/ListChatUsersService';
 
 export default class ChatUsersController {
   public async create(request: Request, response: Response): Promise<Response> {
     try {
       const { chat_id, user_id } = request.body;
 
-      const createChat = container.resolve(JoinChatService);
+      const createChat = container.resolve(CreateChatUserService);
 
       const chat = await createChat.execute({ chat_id, user_id });
 
@@ -18,11 +19,13 @@ export default class ChatUsersController {
     }
   }
 
-  // public async index(request: Request, response: Response): Promise<Response> {
-  //   const listChats = container.resolve(ListChatsService);
+  public async index(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
 
-  //   const chats = await listChats.execute();
+    const listChats = container.resolve(ListChatUsersService);
 
-  //   return response.json(classToClass(chats));
-  // }
+    const chats = await listChats.execute(id);
+
+    return response.json(classToClass(chats));
+  }
 }
