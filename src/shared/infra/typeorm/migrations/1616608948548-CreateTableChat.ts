@@ -29,6 +29,11 @@ export class CreateTableChat1616608948548 implements MigrationInterface {
             isNullable: false,
           },
           {
+            name: 'open',
+            type: 'boolean',
+            isNullable: false,
+          },
+          {
             name: 'created_at',
             type: 'timestamp with time zone',
             default: 'now()',

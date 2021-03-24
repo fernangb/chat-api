@@ -20,6 +20,9 @@ class Chat {
   @Column()
   listeners: number;
 
+  @Column()
+  open: boolean;
+
   @CreateDateColumn()
   created_at: Date;
 
