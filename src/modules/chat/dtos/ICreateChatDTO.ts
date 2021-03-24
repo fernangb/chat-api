@@ -1,3 +1,4 @@
 export default interface ICreateUserDTO {
-  name: string;
+  chat_name: string;
+  user_id: string;
 }

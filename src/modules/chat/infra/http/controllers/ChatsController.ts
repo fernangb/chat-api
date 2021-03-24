@@ -7,12 +7,13 @@ import ListChatsService from '../../../services/ListChatsService';
 export default class ChatsController {
   public async create(request: Request, response: Response): Promise<Response> {
     try {
-      const { name } = request.body;
+      const { name, user_id } = request.body;
 
       const createChat = container.resolve(CreateChatService);
 
       const chat = await createChat.execute({
-        name,
+        chat_name: name,
+        user_id,
       });
 
       return response.json(classToClass(chat));

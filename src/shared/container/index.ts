@@ -5,6 +5,8 @@ import UsersRepository from '../../modules/user/infra/typeorm/repositories/Users
 import IUsersRepository from '../../modules/user/repositories/IUsersRepository';
 import IChatsRepository from '../../modules/chat/repositories/IChatsRepository';
 import ChatsRepository from '../../modules/chat/infra/typeorm/repositories/ChatsRepository';
+import IChatUsersRepository from '../../modules/chat/repositories/IChatUsersRepository';
+import ChatUsersRepository from '../../modules/chat/infra/typeorm/repositories/ChatUsersRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
@@ -14,4 +16,9 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<IChatsRepository>(
   'ChatsRepository',
   ChatsRepository,
+);
+
+container.registerSingleton<IChatUsersRepository>(
+  'ChatUsersRepository',
+  ChatUsersRepository,
 );
