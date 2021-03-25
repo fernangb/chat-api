@@ -59,6 +59,7 @@ O projeto possui as seguintes rotas:
 * users (POST, GET)
 * sessions (POST)
 * chats (POST, GET, GET/:id)
+** o usuário precisa estar autenticado para criar um chat
 * chat users (POST, GET/:id, DELETE/:id)
 * messages (POST, GET/:id)
 * listeners (POST, GET/:id)
