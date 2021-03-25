@@ -2,7 +2,7 @@ import ICreateChatDTO from '../dtos/ICreateChatDTO';
 import IJoinChatDTO from '../dtos/IJoinChatDTO';
 import Chat from '../infra/typeorm/entities/Chat';
 
-export default interface IUsersRepository {
+export default interface IChatsRepository {
   create(data: ICreateChatDTO): Promise<Chat>;
   index(): Promise<Chat[]>;
   findById(id: string): Promise<Chat | undefined>;
