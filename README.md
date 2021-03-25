@@ -29,7 +29,7 @@ docker run --name chat -e POSTGRES_PASSWORD=multiplan -p 5434:5432 -d postgres
 * Os principais comandos do typeorm utilizados são os seguintes:
 Criação de migration:
 ```
-yarn typeorm migration:create -n **Nome da migartion**
+yarn typeorm migration:create -n **Nome da migration**
 ```
 
 Rodar as migrations:
