@@ -1,6 +1,6 @@
 # chat-api
 ## API para chat online
-## Teconologias:
+## Tecnologias:
 * Express
 * TypeORM
 * PostgreSQL
