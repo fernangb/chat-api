@@ -51,6 +51,18 @@ yarn dev:server
 ```
 Caso deseje realizar alguma mudança, basta modificar o arquivo package.json, na parte de scripts
 
+## Rotas
+```
+http://localhost:3333/ **rota**
+```
+O projeto possui as seguintes rotas:
+* users (POST, GET)
+* sessions (POST)
+* chats (POST, GET, GET/:id)
+* chat users (POST, GET/:id, DELETE/:id)
+* messages (POST, GET/:id)
+* listeners (POST, GET/:id)
+
 
 
 
