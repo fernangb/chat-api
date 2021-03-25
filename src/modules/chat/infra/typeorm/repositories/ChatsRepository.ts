@@ -33,6 +33,22 @@ class ChatsRepository implements IChatsRepository {
     await this.ormRepository.save(updatedChat);
   }
 
+  public async joinListenerChat({ chat }: IJoinChatDTO): Promise<void> {
+    const listenersNumber = chat.listeners + 1;
+
+    const updatedChat = { ...chat, listeners: listenersNumber };
+
+    await this.ormRepository.save(updatedChat);
+  }
+
+  public async goOutListenerChat({ chat }: IJoinChatDTO): Promise<void> {
+    const listenersNumber = chat.listeners - 1;
+
+    const updatedChat = { ...chat, listeners: listenersNumber };
+
+    await this.ormRepository.save(updatedChat);
+  }
+
   public async create({ chat_name, user_id }: ICreateChatDTO): Promise<Chat> {
     const chat = this.ormRepository.create({
       name: chat_name,

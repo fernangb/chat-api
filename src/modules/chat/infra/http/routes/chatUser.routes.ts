@@ -9,6 +9,6 @@ chatUsersRouter.post('/', chatUsersController.create);
 
 chatUsersRouter.get('/:id', chatUsersController.index);
 
-chatUsersRouter.delete('/', chatUsersController.delete);
+chatUsersRouter.delete('/:id', chatUsersController.delete);
 
 export default chatUsersRouter;

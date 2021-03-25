@@ -9,6 +9,8 @@ import IChatUsersRepository from '../../modules/chat/repositories/IChatUsersRepo
 import ChatUsersRepository from '../../modules/chat/infra/typeorm/repositories/ChatUsersRepository';
 import IMessagesRepository from '../../modules/chat/repositories/IMessagesRepository';
 import MessagesRepository from '../../modules/chat/infra/typeorm/repositories/MessagesRepository';
+import IListenersRepository from '../../modules/chat/repositories/IListenersRepository';
+import ListenersRepository from '../../modules/chat/infra/typeorm/repositories/ListenersRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
@@ -28,4 +30,9 @@ container.registerSingleton<IChatUsersRepository>(
 container.registerSingleton<IMessagesRepository>(
   'MessagesRepository',
   MessagesRepository,
+);
+
+container.registerSingleton<IListenersRepository>(
+  'ListenersRepository',
+  ListenersRepository,
 );

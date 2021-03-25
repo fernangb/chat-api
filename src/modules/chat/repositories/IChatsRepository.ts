@@ -7,5 +7,7 @@ export default interface IChatsRepository {
   index(): Promise<Chat[]>;
   findById(id: string): Promise<Chat | undefined>;
   joinChat(data: IJoinChatDTO): Promise<void>;
+  joinListenerChat(data: IJoinChatDTO): Promise<void>;
   goOutChat(data: IJoinChatDTO): Promise<void>;
+  goOutListenerChat(data: IJoinChatDTO): Promise<void>;
 }
