@@ -7,4 +7,5 @@ export default interface IUsersRepository {
   index(): Promise<Chat[]>;
   findById(id: string): Promise<Chat | undefined>;
   joinChat(data: IJoinChatDTO): Promise<void>;
+  goOutChat(data: IJoinChatDTO): Promise<void>;
 }

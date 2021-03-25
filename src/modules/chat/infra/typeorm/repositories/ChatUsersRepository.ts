@@ -26,6 +26,10 @@ class ChatUsersRepository implements IChatUsersRepository {
     return chatUser;
   }
 
+  public async delete(id: string): Promise<void> {
+    await this.ormRepository.delete(id);
+  }
+
   public async findByChat(chat_id: string): Promise<ChatUser | undefined> {
     return this.ormRepository.findOne({ where: { chat_id } });
   }

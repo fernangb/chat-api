@@ -25,6 +25,14 @@ class ChatsRepository implements IChatsRepository {
     await this.ormRepository.save(updatedChat);
   }
 
+  public async goOutChat({ chat }: IJoinChatDTO): Promise<void> {
+    const usersNumber = chat.users - 1;
+
+    const updatedChat = { ...chat, users: usersNumber };
+
+    await this.ormRepository.save(updatedChat);
+  }
+
   public async create({ chat_name, user_id }: ICreateChatDTO): Promise<Chat> {
     const chat = this.ormRepository.create({
       name: chat_name,
