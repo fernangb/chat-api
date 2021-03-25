@@ -1,8 +1,6 @@
 import { getRepository, Repository } from 'typeorm';
-import ICreateUserDTO from '../../../dtos/ICreateChatDTO';
 import ICreateChatUserDTO from '../../../dtos/ICreateChatUserDTO';
 import IChatUsersRepository from '../../../repositories/IChatUsersRepository';
-import Chat from '../entities/Chat';
 import ChatUser from '../entities/ChatUser';
 
 class ChatUsersRepository implements IChatUsersRepository {

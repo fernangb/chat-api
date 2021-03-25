@@ -7,6 +7,8 @@ import IChatsRepository from '../../modules/chat/repositories/IChatsRepository';
 import ChatsRepository from '../../modules/chat/infra/typeorm/repositories/ChatsRepository';
 import IChatUsersRepository from '../../modules/chat/repositories/IChatUsersRepository';
 import ChatUsersRepository from '../../modules/chat/infra/typeorm/repositories/ChatUsersRepository';
+import IMessagesRepository from '../../modules/chat/repositories/IMessagesRepository';
+import MessagesRepository from '../../modules/chat/infra/typeorm/repositories/MessagesRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
@@ -21,4 +23,9 @@ container.registerSingleton<IChatsRepository>(
 container.registerSingleton<IChatUsersRepository>(
   'ChatUsersRepository',
   ChatUsersRepository,
+);
+
+container.registerSingleton<IMessagesRepository>(
+  'MessagesRepository',
+  MessagesRepository,
 );
